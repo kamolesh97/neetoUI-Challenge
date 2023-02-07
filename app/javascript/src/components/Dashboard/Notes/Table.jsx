@@ -5,12 +5,7 @@ import { Table as NeetoUITable } from "neetoui";
 import { NOTES_TABLE_COLUMN_DATA } from "./constants";
 import EditNotePane from "./Pane/Edit";
 
-const Table = ({
-  selectedNoteIds,
-  setSelectedNoteIds,
-  notes = [],
-  fetchNotes,
-}) => {
+const Table = ({ selectedNoteIds, setSelectedNoteIds, notes = [] }) => {
   const [showEditNote, setShowEditNote] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
 
@@ -31,7 +26,6 @@ const Table = ({
         />
       </div>
       <EditNotePane
-        fetchNotes={fetchNotes}
         note={selectedNote}
         setShowPane={setShowEditNote}
         showPane={showEditNote}

@@ -1,0 +1,9 @@
+{
+  "common": {
+    "notes": "Notes",
+    "contacts": "Contacts"
+  },
+  "notes": {
+    "title": "All Notes"
+  }
+}
