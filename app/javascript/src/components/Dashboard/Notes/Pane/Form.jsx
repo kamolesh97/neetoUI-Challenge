@@ -5,21 +5,15 @@ import { Button, Pane, Toastr } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 import { useTranslation } from "react-i18next";
 
-import notesApi from "apis/notes";
-
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
-const Form = ({ onClose, note, isEdit, setNotes }) => {
+const Form = ({ onClose, note, setNotes }) => {
   const { t } = useTranslation();
 
   const handleSubmit = async values => {
     try {
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        setNotes(notes => [...notes, values]);
-        Toastr.success(t("notes.noteCreateSuccess"));
-      }
+      setNotes(notes => [...notes, values]);
+      Toastr.success(t("notes.noteCreateSuccess"));
       onClose();
     } catch (err) {
       logger.error(err);
@@ -53,7 +47,7 @@ const Form = ({ onClose, note, isEdit, setNotes }) => {
             <Button
               className="mr-3"
               disabled={isSubmitting}
-              label={isEdit ? "Update" : "Save changes"}
+              label="Save changes"
               loading={isSubmitting}
               style="primary"
               type="submit"

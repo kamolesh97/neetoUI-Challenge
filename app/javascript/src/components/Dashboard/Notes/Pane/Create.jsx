@@ -17,7 +17,6 @@ const Create = ({ setNotes, showPane, setShowPane }) => {
         </Typography>
       </Pane.Header>
       <Form
-        isEdit={false}
         note={NOTES_FORM_INITIAL_FORM_VALUES}
         setNotes={setNotes}
         onClose={onClose}
