@@ -5,6 +5,7 @@
   },
   "notes": {
     "title": "All Notes",
+    "noteCreateSuccess": "Note has been successfully added",
     "noteDeleteSuccess": "Selected notes has been deleted successfully"
   }
 }

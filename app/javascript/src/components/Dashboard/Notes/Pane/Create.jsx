@@ -6,7 +6,7 @@ import Form from "./Form";
 
 import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-const Create = ({ showPane, setShowPane }) => {
+const Create = ({ setNotes, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
@@ -19,6 +19,7 @@ const Create = ({ showPane, setShowPane }) => {
       <Form
         isEdit={false}
         note={NOTES_FORM_INITIAL_FORM_VALUES}
+        setNotes={setNotes}
         onClose={onClose}
       />
     </Pane>
