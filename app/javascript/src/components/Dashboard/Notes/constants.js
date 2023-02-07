@@ -47,22 +47,22 @@ export const VIEWS = [
 export const DUMMY_NOTES = [
   {
     id: 1,
-    title: "How to claim the warranty?",
+    title: "How to claim the warranty 1?",
     description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
   },
   {
     id: 2,
-    title: "How to claim the warranty?",
+    title: "How to claim the warranty 2?",
     description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
   },
   {
     id: 3,
-    title: "How to claim the warranty?",
+    title: "How to claim the warranty 3?",
     description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
   },
   {
     id: 4,
-    title: "How to claim the warranty?",
+    title: "How to claim the warranty 4?",
     description: `"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
   },
 ];

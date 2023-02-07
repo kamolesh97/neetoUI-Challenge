@@ -4,6 +4,7 @@
     "contacts": "Contacts"
   },
   "notes": {
-    "title": "All Notes"
+    "title": "All Notes",
+    "noteDeleteSuccess": "Selected notes has been deleted successfully"
   }
 }
