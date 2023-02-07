@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 
-import { Alert } from "neetoui";
+import { Alert, Toastr } from "neetoui";
+import { useTranslation } from "react-i18next";
 
-const DeleteAlert = ({ onClose, selectedNoteIds, setSelectedNoteIds }) => {
+const DeleteAlert = ({
+  onClose,
+  setNotes,
+  selectedNoteIds,
+  setSelectedNoteIds,
+}) => {
+  const { t } = useTranslation();
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = async () => {
     try {
       setDeleting(true);
+      setNotes(notes =>
+        notes.filter(({ id }) => !selectedNoteIds.includes(id))
+      );
+      Toastr.success(t("notes.noteDeleteSuccess"));
       onClose();
       setSelectedNoteIds([]);
     } catch (error) {

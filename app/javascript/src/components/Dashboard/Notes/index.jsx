@@ -90,6 +90,7 @@ const Notes = () => {
         {showDeleteAlert && (
           <DeleteAlert
             selectedNoteIds={selectedNoteIds}
+            setNotes={setNotes}
             setSelectedNoteIds={setSelectedNoteIds}
             onClose={() => setShowDeleteAlert(false)}
           />
