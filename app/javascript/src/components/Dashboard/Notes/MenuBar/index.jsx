@@ -9,15 +9,10 @@ const Menu = ({ showMenu }) => {
   const { t } = useTranslation();
 
   return (
-    <MenuBar
-      data-cy="contacts-menubar-heading"
-      showMenu={showMenu}
-      title={t("common.notes")}
-    >
+    <MenuBar showMenu={showMenu} title={t("common.notes")}>
       {VIEWS.map(({ category, count }) => (
         <MenuBar.Block
           active={category === VIEWS[0].category}
-          className="capitalize"
           count={count}
           key={category}
           label={category}
