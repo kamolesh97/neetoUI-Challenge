@@ -11,7 +11,9 @@
       "neetoui/*": ["../../../node_modules/@bigbinary/neetoui/*"],
       "neetoui": ["../../../node_modules/@bigbinary/neetoui"],
       "neetoicons/*": ["../../../node_modules/@bigbinary/neeto-icons/*"],
-      "neetoicons": ["../../../node_modules/@bigbinary/neeto-icons"]
+      "neetoicons": ["../../../node_modules/@bigbinary/neeto-icons"],
+      "translations/*": ["src/translations/*"],
+      "translations": ["src/translations"]
     },
     "pretty": true,
     "experimentalDecorators": true,
