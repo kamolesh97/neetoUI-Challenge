@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { isPresent } from "utils";
 
 import { setAuthHeaders, registerIntercepts } from "apis/axios";
-import initializeI18n from "common/i18n";
+import "common/i18n";
 import { initializeLogger } from "common/logger";
 import PrivateRoute from "components/commons/PrivateRoute";
 import Hero from "components/Hero";
@@ -36,7 +36,7 @@ const Main = props => {
   useEffect(() => {
     userDispatch({ type: "SET_USER", payload: { user: props?.user } });
     initializeLogger();
-    initializeI18n();
+    // initializeI18n();
     registerIntercepts(authDispatch);
     setAuthHeaders(setLoading);
   }, [authDispatch, props?.user, userDispatch]);

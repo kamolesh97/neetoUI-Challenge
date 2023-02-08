@@ -6,6 +6,26 @@
   "notes": {
     "title": "All Notes",
     "noteCreateSuccess": "Note has been successfully added",
-    "noteDeleteSuccess": "Selected notes has been deleted successfully"
+    "noteDeleteSuccess_one": "Selected note has been deleted successfully",
+    "noteDeleteSuccess_other": "Selected notes has been deleted successfully"
+  },
+  "contacts": {
+    "title": "All Contacts",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "role": {
+        "title": "Role",
+        "placeHolder": "Select Role",
+        "options": {
+          "standard": "Standard",
+          "admin": "Admin"
+        }
+      }
+    },
+    "contactCreateSuccess": "Contact has been successfully added",
+    "contactDeleteSuccess_one": "Selected contact has been deleted successfully",
+    "contactDeleteSuccess_other": "Selected contacts has been deleted successfully"
   }
 }

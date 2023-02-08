@@ -10,14 +10,10 @@ import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 const Form = ({ onClose, note, setNotes }) => {
   const { t } = useTranslation();
 
-  const handleSubmit = async values => {
-    try {
-      setNotes(notes => [...notes, values]);
-      Toastr.success(t("notes.noteCreateSuccess"));
-      onClose();
-    } catch (err) {
-      logger.error(err);
-    }
+  const handleSubmit = values => {
+    setNotes(notes => [...notes, { ...values, id: notes.length }]);
+    Toastr.success(t("notes.noteCreateSuccess"));
+    onClose();
   };
 
   return (

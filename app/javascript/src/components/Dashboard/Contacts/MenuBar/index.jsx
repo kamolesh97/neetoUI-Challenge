@@ -9,7 +9,7 @@ const Menu = ({ showMenu }) => {
   const { t } = useTranslation();
 
   return (
-    <MenuBar showMenu={showMenu} title={t("common.notes")}>
+    <MenuBar showMenu={showMenu} title={t("common.contacts")}>
       {VIEWS.map(({ id, categoryName, count }) => (
         <MenuBar.Block
           active={categoryName === VIEWS[0].categoryName}
