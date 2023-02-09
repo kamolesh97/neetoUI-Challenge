@@ -1,23 +1,24 @@
 {
-  "name": "wheel",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
-  },
+  "name": "neetoUI Challenge",
+  "scripts": {},
+  "stack": "heroku-20",
   "env": {
+    "RESET_DATABASE_WITH_SAMPLE_DATA": {
+      "required": true,
+      "value": "true"
+    },
     "SECRET_KEY_BASE": {
-      "generator": "secret"
+      "required": false,
+      "value": "0e649990875d727097d4df6a82ccc6cff7a2d8b49e1eb6697a2a36134d58969d74328edc018747e28a4bf73c077687c15783dfed7d45e76ed60ce83b0ce97b27"
     },
     "RACK_ENV": {
       "value": "heroku"
     },
+    "PORT": {
+      "value": 3000
+    },
     "RAILS_ENV": {
       "value": "heroku"
-    },
-    "AWS_ACCESS_KEY_ID": {
-      "required": false
-    },
-    "AWS_SECRET_ACCESS_KEY": {
-      "required": false
     },
     "HEROKU_APP_NAME": {
       "required": true
@@ -28,11 +29,32 @@
     "YARN_PRODUCTION": {
       "value": "true"
     },
+    "NODE_MODULES_CACHE": {
+      "value": "true"
+    },
     "YARN_CACHE": {
       "value": "true"
     },
-    "NODE_MODULES_CACHE": {
+    "DISABLE_RACK_ATTACK": {
       "value": "true"
+    },
+    "DEFAULT_PASSWORD": {
+      "value": "welcome"
+    },
+    "DEFAULT_SUBDOMAIN": {
+      "value": "app"
+    },
+    "CLIENT_AUTHENTICATION_TOKEN": {
+      "value": "mysecrettoken123%&^@"
+    },
+    "ENCRYPTION_PRIMARY_KEY": {
+      "value": "APqKn1qJmwNXgDcHnXTOaFIhtYhnP3LN"
+    },
+    "ENCRYPTION_DETERMINISTIC_KEY": {
+      "value": "0VVpOKlunO4QtsHhieXJfdXZ6GXeIam9"
+    },
+    "ENCRYPTION_DERIVATION_SALT_KEY": {
+      "value": "BjUcTV17hJNy7bzN19q467nnF3ZtW0kJ"
     }
   },
   "formation": {},
@@ -40,11 +62,14 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
+        "version": "14"
       }
     },
     {
-      "plan": "heroku-redis:hobby-dev"
+      "plan": "heroku-redis:hobby-dev",
+      "options": {
+        "version": "6"
+      }
     }
   ],
   "buildpacks": [
