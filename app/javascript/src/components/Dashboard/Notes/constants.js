@@ -27,19 +27,23 @@ export const NOTES_TABLE_COLUMN_DATA = [
 
 export const VIEWS = [
   {
-    category: "All",
+    id: 1,
+    categoryName: "All",
     count: 200,
   },
   {
-    category: "Users",
+    id: 2,
+    categoryName: "Users",
     count: 80,
   },
   {
-    category: "Leads",
+    id: 3,
+    categoryName: "Leads",
     count: 60,
   },
   {
-    category: "Visitors",
+    id: 4,
+    categoryName: "Visitors",
     count: 60,
   },
 ];

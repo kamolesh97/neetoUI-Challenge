@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import EmptyNotesListImage from "images/EmptyNotesList";
+import EmptyContactsListImage from "images/EmptyNotesList";
 import { Delete } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
@@ -8,28 +8,24 @@ import { useTranslation } from "react-i18next";
 
 import EmptyState from "components/commons/EmptyState";
 
-import { DUMMY_NOTES } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import Menubar from "./MenuBar";
-import NewNotePane from "./Pane/Create";
+import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
-const Notes = () => {
+const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showNewNotePane, setShowNewNotePane] = useState(false);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([]);
+  const [selectedContactIds, setSelectedContactIds] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    setTimeout(() => {
-      setNotes(DUMMY_NOTES);
-      setLoading(false);
-    }, 2000);
+    setLoading(false);
   }, []);
 
   if (loading) {
@@ -42,13 +38,13 @@ const Notes = () => {
       <Container>
         <Header
           menuBarToggle={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}
-          title={t("notes.title")}
+          title={t("contacts.title")}
           actionBlock={
             <Button
               icon="ri-add-line"
-              label="Add new note"
+              label="Add new contact"
               size="small"
-              onClick={() => setShowNewNotePane(true)}
+              onClick={() => setShowNewContactPane(true)}
             />
           }
           searchProps={{
@@ -56,12 +52,12 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        {notes.length ? (
+        {contacts.length ? (
           <>
             <SubHeader
               rightActionBlock={
                 <Button
-                  disabled={!selectedNoteIds.length}
+                  disabled={!selectedContactIds.length}
                   icon={Delete}
                   label="Delete"
                   size="small"
@@ -70,30 +66,30 @@ const Notes = () => {
               }
             />
             <Table
-              notes={notes}
-              selectedNoteIds={selectedNoteIds}
-              setSelectedNoteIds={setSelectedNoteIds}
+              contacts={contacts}
+              selectedContactIds={selectedContactIds}
+              setSelectedContactIds={setSelectedContactIds}
             />
           </>
         ) : (
           <EmptyState
-            image={EmptyNotesListImage}
-            primaryAction={() => setShowNewNotePane(true)}
-            primaryActionLabel="Add new note"
-            subtitle="Add your notes to send customized emails to them."
-            title="Looks like you don't have any notes!"
+            image={EmptyContactsListImage}
+            primaryAction={() => setShowNewContactPane(true)}
+            primaryActionLabel="Add new contact"
+            subtitle="Add your contacts to send customized notes to them."
+            title="Looks like you don't have any contacts!"
           />
         )}
-        <NewNotePane
-          setNotes={setNotes}
-          setShowPane={setShowNewNotePane}
-          showPane={showNewNotePane}
+        <NewContactPane
+          setContacts={setContacts}
+          setShowPane={setShowNewContactPane}
+          showPane={showNewContactPane}
         />
         {showDeleteAlert && (
           <DeleteAlert
-            selectedNoteIds={selectedNoteIds}
-            setNotes={setNotes}
-            setSelectedNoteIds={setSelectedNoteIds}
+            selectedContactIds={selectedContactIds}
+            setContacts={setContacts}
+            setSelectedContactIds={setSelectedContactIds}
             onClose={() => setShowDeleteAlert(false)}
           />
         )}
@@ -102,4 +98,4 @@ const Notes = () => {
   );
 };
 
-export default Notes;
+export default Contacts;
